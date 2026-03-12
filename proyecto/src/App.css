@@ -1,42 +1,403 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ============================================
+   APP.CSS — Estilos globales y del feed
+   Inspirado en la página de mini juegos original
+   ============================================ */
+
+/* ---- VARIABLES DE COLOR ---- */
+:root {
+  --color-bg: #1a1a2e;
+  --color-bg-dark: #0f0f1a;
+  --color-bg-card: #252540;
+  --color-featured-bg: #111125;
+  --color-accent: #f0c040;
+  --color-accent-hover: #f5d060;
+  --color-new-badge: #4a90d9;
+  --color-players-bg: rgba(0, 0, 0, 0.65);
+  --color-text: #ffffff;
+  --color-text-muted: #aaaacc;
+  --color-overlay: rgba(0, 0, 0, 0.75);
+  --sidebar-width: 60px;
+  --header-height: 56px;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---- RESET BÁSICO ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  min-height: 100vh;
+}
+
+/* ============================================
+   LAYOUT GENERAL DE LA APP
+   ============================================ */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Placeholder del header (Jesús lo reemplaza) */
+.app__header-placeholder {
+  height: var(--header-height);
+  background-color: #222236;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  border-bottom: 1px solid #333355;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Cuerpo: sidebar + main */
+.app__body {
+  display: flex;
+  flex: 1;
+}
+
+/* Placeholder de la sidebar (Jesús lo reemplaza) */
+.app__sidebar-placeholder {
+  width: var(--sidebar-width);
+  background-color: #1c1c30;
+  border-right: 1px solid #333355;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 16px;
+  color: var(--color-text-muted);
+  font-size: 10px;
   text-align: center;
+  writing-mode: vertical-rl;
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Área principal del feed */
+.app__main {
+  flex: 1;
+  overflow-x: hidden;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ============================================
+   FEED GENERAL
+   ============================================ */
+
+.feed {
+  width: 100%;
+}
+
+/* ============================================
+   SECCIÓN FEATURED (CARRUSEL PRINCIPAL)
+   ============================================ */
+
+.feed__featured {
+  background-color: var(--color-featured-bg);
+  padding: 12px 12px 16px 12px;
+}
+
+/* Fila superior: 4 tarjetas grandes */
+.feed__featured-row--top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* Fila inferior: 7 tarjetas medianas */
+.feed__featured-row--bottom {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+/* ============================================
+   SECCIÓN JUEGOS NUEVOS
+   ============================================ */
+
+.feed__new-games {
+  padding: 20px 16px;
+  background-color: var(--color-bg);
+}
+
+/* Encabezado de la sección */
+.feed__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.feed__section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ícono "N" de la sección */
+.feed__section-icon {
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-new-badge);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+}
+
+.feed__section-title h2 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-text);
+}
+
+/* Contador de juegos nuevos (esquina derecha) */
+.feed__section-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #2a2a44;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.feed__count-n {
+  color: var(--color-new-badge);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* Grid de tarjetas pequeñas */
+.feed__new-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+/* Botón "Ver más" */
+.feed__show-more {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.feed__show-more-btn {
+  background-color: var(--color-accent);
+  color: #111;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.feed__show-more-btn:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* ============================================
+   COMPONENTE: GameCard
+   ============================================ */
+
+.gamecard {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Tamaño LARGE: carrusel primera fila */
+.gamecard--large .gamecard__img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+/* Tamaño MEDIUM: carrusel segunda fila */
+.gamecard--medium .gamecard__img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+/* Tamaño SMALL: sección juegos nuevos */
+.gamecard--small .gamecard__img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+/* Contenedor de la imagen */
+.gamecard__img-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Imagen del juego */
+.gamecard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gamecard:hover .gamecard__img {
+  transform: scale(1.05);
+}
+
+/* Fallback cuando la imagen falla */
+.gamecard__img-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Etiqueta de jugadores */
+.gamecard__players {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: var(--color-players-bg);
+  border-radius: 10px;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: white;
+  z-index: 2;
+}
+
+.gamecard__players-icon {
+  font-size: 10px;
+}
+
+/* Badge "N" de nuevo */
+.gamecard__new-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: var(--color-new-badge);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: white;
+  z-index: 2;
+}
+
+/* Overlay al hacer hover */
+.gamecard__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: 10px;
+}
+
+.gamecard:hover .gamecard__overlay {
+  opacity: 1;
+}
+
+/* Título dentro del overlay */
+.gamecard__title {
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  padding: 0 8px;
+}
+
+/* Botón "Jugar" dentro del overlay */
+.gamecard__play-btn {
+  background-color: var(--color-accent);
+  color: #111;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.gamecard__play-btn:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* Nombre debajo de la tarjeta (solo size small) */
+.gamecard__name {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================
+   RESPONSIVE — pantallas pequeñas
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .feed__featured-row--top {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+
+  .feed__featured-row--bottom {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .feed__new-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 600px) {
+  .feed__featured-row--top {
+    grid-template-columns: repeat(2, 1fr);
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .feed__featured-row--bottom {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-.read-the-docs {
-  color: #888;
+  .feed__new-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
