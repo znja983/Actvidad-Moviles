@@ -1,0 +1,138 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #2f3237;
+    padding: 15px 10px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-center input {
+    width: 300px;
+    height: 20px;
+    padding: 8px 15px;
+    border-radius: 30px;
+    border: none;
+    background: #4b5057;
+    color: white;
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.nav-right {
+    display: flex;
+    margin-right: 25px;
+}
+
+.menu-lateral {
+    position: fixed;
+    left: -250px;
+    top: 56px;                          /* cambiar de 70px a 56px */
+    width: 250px;
+    height: calc(100vh - 56px);         /* cambiar de 100vh a calc(100vh - 56px) */
+    background: #25272b;
+    transition: 0.3s;
+    overflow-y: auto;
+    z-index: 99;                        /* AGREGAR ESTA LÍNEA */
+}
+
+.menu-lateral.open {
+    left: 0;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 20px;
+}
+
+.menu-lateral img {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+
+    background-image: url("https://s2.minijuegosgratis.com/styles/img/nav_menu_collapse.svg?v=1772347909");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+
+    background-image: url("https://cdn-icons-png.flaticon.com/512/2609/2609282.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    filter: invert(1);
+
+    cursor: pointer;
+
+}
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-name {
+    color: #f0c040;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.logout-btn {
+    background-color: transparent;
+    border: 1px solid #f0c040;
+    color: #f0c040;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #f0c040;
+    color: #111;
+}

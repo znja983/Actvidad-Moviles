@@ -1,0 +1,185 @@
+// ============================================
+// DATOS DE JUEGOS
+// Para agregar un juego nuevo, copia uno de estos objetos
+// y cambia los valores. ¡Así de fácil!
+// ============================================
+
+// Juegos que aparecen en el CARRUSEL PRINCIPAL (parte de arriba grande)
+export const featuredGames = [
+  {
+    id: 1,
+    title: "Stickman Fight",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/704a13e5f2b83b1e4f13eb60d0d9628b.png",
+    players: 24,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 2,
+    title: "Domino Classic",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/2bdba9c4c63f96c92588cc45b38c4c5a.png",
+    players: 4,
+    isNew: false,
+    isMultiplayer: true,
+  },
+  {
+    id: 3,
+    title: "Bubble Shooter",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/53e1c1ad72d01e35b7ad7d7cf4a80809.png",
+    players: 89,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 4,
+    title: "Bottle Sort",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/6eb50fb74dd89b2e94e4e4fcbacf0b1f.png",
+    players: 15,
+    isNew: false,
+    isMultiplayer: false,
+  },
+];
+
+// Juegos de la segunda fila del carrusel
+export const featuredGames2 = [
+  {
+    id: 5,
+    title: "Battle Arena",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/f4a3c15dbb8b8c4c41b7c1c2d7eba0a1.png",
+    players: 7,
+    isNew: false,
+    isMultiplayer: true,
+  },
+  {
+    id: 6,
+    title: "Word Search",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/3c2b1a4e5f6d7e8a9b0c1d2e3f4a5b6c.png",
+    players: 33,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 7,
+    title: "City Builder",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6.png",
+    players: 12,
+    isNew: false,
+    isMultiplayer: false,
+  },
+  {
+    id: 8,
+    title: "Maze Runner",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7.png",
+    players: 5,
+    isNew: false,
+    isMultiplayer: false,
+  },
+  {
+    id: 9,
+    title: "Snake Classic",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8.png",
+    players: 41,
+    isNew: false,
+    isMultiplayer: false,
+  },
+  {
+    id: 10,
+    title: "Arrow Maze",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9.png",
+    players: 19,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 11,
+    title: "Pipe Puzzle",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0.png",
+    players: 28,
+    isNew: false,
+    isMultiplayer: false,
+  },
+];
+
+// Juegos de la sección "JUEGOS NUEVOS" (parte de abajo)
+export const newGames = [
+  {
+    id: 12,
+    title: "Cyber Dino Runner",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/abc123def456abc123def456abc123de.png",
+    players: 12,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 13,
+    title: "Club Highstreet",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/def456abc123def456abc123def456ab.png",
+    players: 4,
+    isNew: true,
+    isMultiplayer: true,
+  },
+  {
+    id: 14,
+    title: "Blockstar Origins",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/efg789bcd012efg789bcd012efg789bc.png",
+    players: 29,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 15,
+    title: "Stone City",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/fgh012cde345fgh012cde345fgh012cd.png",
+    players: 0,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 16,
+    title: "Age of Heroes",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/ghi345def678ghi345def678ghi345de.png",
+    players: 4,
+    isNew: true,
+    isMultiplayer: true,
+  },
+  {
+    id: 17,
+    title: "Space Dash",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/hij456efg789hij456efg789hij456ef.png",
+    players: 9,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 18,
+    title: "Ninja Fruit",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/ijk567fgh890ijk567fgh890ijk567fg.png",
+    players: 17,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 19,
+    title: "Dragon Quest",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/jkl678ghi901jkl678ghi901jkl678gh.png",
+    players: 22,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 20,
+    title: "Farm Heroes",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/klm789hij012klm789hij012klm789hi.png",
+    players: 6,
+    isNew: true,
+    isMultiplayer: false,
+  },
+  {
+    id: 21,
+    title: "Tower Defense",
+    image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/lmn890ijk123lmn890ijk123lmn890ij.png",
+    players: 31,
+    isNew: true,
+    isMultiplayer: false,
+  },
+];
